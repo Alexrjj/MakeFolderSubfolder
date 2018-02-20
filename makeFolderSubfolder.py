@@ -8,7 +8,7 @@ wb = openpyxl.load_workbook('pastas.xlsx')
 for sheet in wb.worksheets:
     path = sheet['A2'].value
     for row in sheet.iter_cols(min_row=2, min_col=2, max_col=2):
-        input('Change the data in xlsm file and press any key to continue...')
+        input('Change the date in xlsm file to ' + sheet['A2'].value + ' and press enter key to continue...')
         for cell in row:
             os.makedirs(os.path.join(path, str(cell.value)))
             shutil.copy2('FluxoObraPadrao4.0.xlsm', os.path.join(path, str(cell.value)))
