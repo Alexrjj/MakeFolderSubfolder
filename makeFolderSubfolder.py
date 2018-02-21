@@ -8,6 +8,7 @@ wb = openpyxl.load_workbook('pastas.xlsx')
 for sheet in wb.worksheets:
     path = sheet['A2'].value
     for row in sheet.iter_cols(min_row=2, min_col=2, max_col=2):
+        print('Change the date in xlsm file to ' + sheet['A2'].value)
         os.startfile('FluxoObraPadrao4.0.xlsm')
         for x in range(0, 1000):
             try:
